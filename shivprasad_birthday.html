@@ -1,0 +1,107 @@
+
+
+
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday Shivprasad 🎂</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff6a88, #ff99ac);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 45px;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+            margin-top: 20px;
+            border: 5px solid white;
+        }
+
+        p {
+            font-size: 22px;
+            margin: 20px;
+        }
+
+        /* FIXED BUTTON STYLE */
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 30px;
+            background-color: white;
+            color: #ff4e73;
+            cursor: pointer;
+            position: relative;
+            z-index: 9999;   /* Always on top */
+            margin-bottom: 50px;
+        }
+
+        button:hover {
+            background-color: #ffe6ec;
+        }
+
+        /* Balloons behind content */
+        .balloon {
+            width: 50px;
+            height: 70px;
+            border-radius: 50%;
+            position: fixed;
+            bottom: -100px;
+            animation: float 8s infinite;
+            z-index: 0;   /* Behind everything */
+        }
+
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-120vh); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎂 Happy Birthday Shivprasad 🎂</h1>
+
+    <img src="shivprasad.jpg" alt="Shivprasad Photo">
+
+    <p>
+        Dear Brother Shivprasad 💙<br>
+        May your life be filled with happiness, success & endless smiles! ✨<br><br>
+        ❤️ With love, Your Sister Sneha ❤️
+    </p>
+
+    <button onclick="surprise()">Click for Surprise 🎁</button>
+
+    <audio id="song">
+        <source src="happy-birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function surprise() {
+            alert("🎉 Happy Birthday Dear Brother Shivprasad! 🎂💙 - From Sneha");
+            document.getElementById("song").play();
+        }
+
+        for (let i = 0; i < 15; i++) {
+            let balloon = document.createElement("div");
+            balloon.className = "balloon";
+            balloon.style.left = Math.random() * 100 + "vw";
+            balloon.style.backgroundColor =
+                "hsl(" + Math.random() * 360 + ", 70%, 60%)";
+            balloon.style.animationDuration = (5 + Math.random() * 5) + "s";
+            document.body.appendChild(balloon);
+        }
+    </script>
+
+</body>
+</html>
